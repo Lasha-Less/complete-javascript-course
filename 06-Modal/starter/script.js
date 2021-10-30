@@ -11,7 +11,7 @@ const btnsOpenModal = document.querySelectorAll(".show-modal");
 console.log(btnsOpenModal);
 
 const openModal = function () {
-  console.log("Why did You do that?!");
+  // console.log("Why did You do that?!");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -29,7 +29,11 @@ btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
-  console.log(e);
+  console.log(e.key);
+
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
 });
 
 // console.log(modal.classList);
